@@ -2,6 +2,8 @@
 
 This Python script demonstrates the use of OpenCV to find matching objects in an image using feature detection and matching techniques. The script supports two methods: Scale-Invariant Feature Transform (SIFT) and Oriented FAST and Rotated BRIEF (ORB).
 
+If you find it helps, please feel free to give me a star. ⭐⭐⭐
+
 
 ## Features
 
