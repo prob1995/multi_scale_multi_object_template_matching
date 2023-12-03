@@ -62,13 +62,13 @@ def find_matching_boxes(image, template, detector_method, params):
         transformed_corners = cv2.perspectiveTransform(corners, H)
         matched_boxes.append(transformed_corners)
 
-        # You can uncomment the following lines to see the matching process
-        # Draw the bounding box
-        img1_with_box = matching_img.copy()
-        matching_result = cv2.drawMatches(img1_with_box, keypoints1, template, keypoints2, good_matches, None, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
-        cv2.polylines(matching_result, [np.int32(transformed_corners)], True, (255, 0, 0), 3, cv2.LINE_AA)
-        plt.imshow(matching_result, cmap='gray')
-        plt.show()
+        # # You can uncomment the following lines to see the matching process
+        # # Draw the bounding box
+        # img1_with_box = matching_img.copy()
+        # matching_result = cv2.drawMatches(img1_with_box, keypoints1, template, keypoints2, good_matches, None, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
+        # cv2.polylines(matching_result, [np.int32(transformed_corners)], True, (255, 0, 0), 3, cv2.LINE_AA)
+        # plt.imshow(matching_result, cmap='gray')
+        # plt.show()
 
         # Create a mask and fill the matched area with near neighbors
         matching_img2 = cv2.cvtColor(matching_img, cv2.COLOR_BGR2GRAY) 
@@ -80,10 +80,10 @@ def find_matching_boxes(image, template, detector_method, params):
     return matched_boxes
 
 # Example usage:
-img1 = cv2.imread('i_remoter.png' ) # Image
+img1 = cv2.imread('i_remoter.png') # Image
 img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2RGB)
 
-template = cv2.imread('t_remoter.png' ) # Template
+template = cv2.imread('t_remoter.png') # Template
 template = cv2.cvtColor(template, cv2.COLOR_BGR2RGB)
 
 params = {
