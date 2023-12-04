@@ -81,16 +81,17 @@ def find_matching_boxes(image, template, detector_method, params):
 
 # Example usage:
 img1 = cv2.imread('i_remoter.png') # Image
-img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2RGB)
-
 template = cv2.imread('t_remoter.png') # Template
-template = cv2.cvtColor(template, cv2.COLOR_BGR2RGB)
 
 params = {
     'max_matching_objects': 10,
     'SIFT_distance_threshold': 0.85,
     'best_matches_points': 500
 }
+
+# Convert to RGB
+img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2RGB)
+template = cv2.cvtColor(template, cv2.COLOR_BGR2RGB)
 
 # Change to "SIFT" or "ORB" depending on your requirement
 matched_boxes = find_matching_boxes(img1, template, "SIFT", params) 
