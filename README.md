@@ -43,3 +43,8 @@ and repeat matching...
 
 Final result:  
 ![Alt text](results/output.png)  
+
+## Reference
+
+https://docs.opencv.org/4.8.0/d1/de0/tutorial_py_feature_homography.html  
+https://datascience.stackexchange.com/questions/27330/python-feature-matching-homography-to-find-multiple-objects  
