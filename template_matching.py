@@ -80,6 +80,8 @@ def find_matching_boxes(image, template, detector_method, params):
     return matched_boxes
 
 # Example usage:
+matching_method = "SIFT" # "SIFT" or "ORB"
+
 img1 = cv2.imread('i_remoter.png') # Image
 template = cv2.imread('t_remoter.png') # Template
 
@@ -94,7 +96,7 @@ img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2RGB)
 template = cv2.cvtColor(template, cv2.COLOR_BGR2RGB)
 
 # Change to "SIFT" or "ORB" depending on your requirement
-matched_boxes = find_matching_boxes(img1, template, "SIFT", params) 
+matched_boxes = find_matching_boxes(img1, template, matching_method, params) 
 
 # Draw the bounding boxes on the original image
 for box in matched_boxes:
